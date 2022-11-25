@@ -16,6 +16,7 @@ row2 = " B "+" "+b1+" "+"|"+" "+b2+" "+"|"+" "+b3+" "+"|"
 row3 = " C "+" "+c1+" "+"|"+" "+c2+" "+"|"+" "+c3+" "+"|"
 
 def showBoard():
+    global row0,row1,row2,row3
     print(row0)
     print(row1)
     print(row2)
@@ -52,23 +53,23 @@ def noughtChoiceFunc():
     global a1,a2,a3,b1,b2,b3,c1,c2,c3
     noughtChoice = input("Team Noughts: Enter the Row Letter and Column Number (E.G A2)\n")
     if noughtChoice == "A1" and a1 == " ":
-        a1 = "x"
+        a1 = "0"
     if noughtChoice == "A2" and a2 == " ":
-        a2 = "x"
+        a2 = "0"
     if noughtChoice == "A3" and a3 == " ":
-        a3 = "x"
+        a3 = "0"
     if noughtChoice == "B1" and b1 == " ":
-        b1 = "x"
+        b1 = "0"
     if noughtChoice == "B2" and b2 == " ":
-        b2 = "x"
+        b2 = "0"
     if noughtChoice == "B3" and b3 == " ":
-        b3 = "x"
+        b3 = "0"
     if noughtChoice == "C1" and c1 == " ":
-        c1 = "x"
+        c1 = "0"
     if noughtChoice == "C2" and c2 == " ":
-        c2 = "x"
+        c2 = "0"
     if noughtChoice == "C3" and c3 == " ":
-        c3 = "x"
+        c3 = "0"
     showBoard()
 
 def checkBoard():

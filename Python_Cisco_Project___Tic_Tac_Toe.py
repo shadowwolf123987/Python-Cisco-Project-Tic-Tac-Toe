@@ -11,12 +11,13 @@ c2=" "
 c3=" "
 
 row0 = "    1 | 2 | 3 |"
-row1 = " A "+" "+a1+" "+"|"+" "+a2+" "+"|"+" "+a3+" "+"|"
-row2 = " B "+" "+b1+" "+"|"+" "+b2+" "+"|"+" "+b3+" "+"|"
-row3 = " C "+" "+c1+" "+"|"+" "+c2+" "+"|"+" "+c3+" "+"|"
 
 def showBoard():
-    global row0,row1,row2,row3
+    global row0,a1,a2,a3,b1,b2,b3,c1,c2,c3
+    row1 = " A "+" "+a1+" "+"|"+" "+a2+" "+"|"+" "+a3+" "+"|"
+    row2 = " B "+" "+b1+" "+"|"+" "+b2+" "+"|"+" "+b3+" "+"|"
+    row3 = " C "+" "+c1+" "+"|"+" "+c2+" "+"|"+" "+c3+" "+"|"
+
     print(row0)
     print(row1)
     print(row2)
@@ -45,8 +46,6 @@ def crossChoiceFunc():
         c2 = "x"
     if crossChoice == "C3" and c3 == " ":
         c3 = "x"
-    else:
-        print("error")
     showBoard()
 
 def noughtChoiceFunc():
@@ -83,7 +82,7 @@ def gameLoop():
         checkBoard()
         if a1 != " " and a2 != " " and a3 != " " and b1 != " " and b2 != " " and b3 != " " and c1 != " " and c2 != " " and c3 != " ": #Checks if all spaces are filled
             print("All spaces filled: DRAW\n")
-            False
+            break
         else:
             if count % 2 == 0: #Checks if count can be divided by 2 if so runs nought function
                 noughtChoiceFunc()

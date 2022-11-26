@@ -1,4 +1,5 @@
 
+loop=True
 count=0
 a1=" "
 a2=" "
@@ -58,7 +59,7 @@ def noughtChoiceFunc():
     if noughtChoice == "A3" and a3 == " ":
         a3 = "0"
     if noughtChoice == "B1" and b1 == " ":
-        b1 = "0"
+        b1 = "0" 
     if noughtChoice == "B2" and b2 == " ":
         b2 = "0"
     if noughtChoice == "B3" and b3 == " ":
@@ -72,18 +73,65 @@ def noughtChoiceFunc():
     showBoard()
 
 def checkBoard():
+    global loop
     if a1 == "x" and a2 == "x" and a3 == "x":
         print("Crosses Win")
-        False
+        loop = False
+    if b1 == "x" and b2 == "x" and b3 == "x":
+        print("Crosses Win")
+        loop = False
+    if c1 == "x" and c2 == "x" and c3 == "x":
+        print("Crosses Win")
+        loop = False
+    if a1 == "x" and b1 == "x" and c1 == "x":
+        print("Crosses Win")
+        loop = False
+    if a2 == "x" and b2 == "x" and c2 == "x":
+        print("Crosses Win")
+        loop = False
+    if a3 == "x" and b3 == "x" and c3 == "x":
+        print("Crosses Win")
+        loop = False
+    if a1 == "x" and b2 == "x" and c3 == "x":
+        print("Crosses Win")
+        loop = False
+    if a3 == "x" and b2 == "x" and c1 == "x":
+        print("Crosses Win")
+        loop = False
+
+    if a1 == "0" and a2 == "0" and a3 == "0":
+        print("Noughts Win")
+        loop = False
+    if b1 == "0" and b2 == "0" and b3 == "0":
+        print("Noughts Win")
+        loop = False
+    if c1 == "0" and c2 == "0" and c3 == "0":
+        print("Noughts Win")
+        loop = False
+    if a1 == "0" and b1 == "0" and c1 == "0":
+        print("Noughts Win")
+        loop = False
+    if a2 == "0" and b2 == "0" and c2 == "0":
+        print("Noughts Win")
+        loop = False
+    if a3 == "0" and b3 == "0" and c3 == "0":
+        print("Noughts Win")
+        loop = False
+    if a1 == "0" and b2 == "0" and c3 == "0":
+        print("Noughts Win")
+        loop = False
+    if a3 == "0" and b2 == "0" and c1 == "0":
+        print("Noughts Win")
+        loop = False
 
 def gameLoop():
-    global count
-    while True:
+    global count,loop
+    while loop == True:
         checkBoard()
-        if a1 != " " and a2 != " " and a3 != " " and b1 != " " and b2 != " " and b3 != " " and c1 != " " and c2 != " " and c3 != " ": #Checks if all spaces are filled
+        if a1 != " " and a2 != " " and a3 != " " and b1 != " " and b2 != " " and b3 != " " and c1 != " " and c2 != " " and c3 != " " and loop != False #Checks if all spaces are filled
             print("All spaces filled: DRAW\n")
-            break
-        else:
+            loop=False
+        elif loop != False:
             if count % 2 == 0: #Checks if count can be divided by 2 if so runs nought function
                 noughtChoiceFunc()
             if count % 2 != 0:
